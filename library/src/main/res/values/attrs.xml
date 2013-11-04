@@ -90,6 +90,7 @@
         <attr name="android:orientation"/>
 
         <!-- Imported from AbsListView -->
+        <attr name="android:divider"/>
         <attr name="android:choiceMode"/>
         <attr name="android:drawSelectorOnTop"/>
         <attr name="android:listSelector"/>
