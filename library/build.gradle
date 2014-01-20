@@ -1,3 +1,5 @@
+apply plugin: 'maven'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -16,4 +18,22 @@ dependencies {
 android {
     compileSdkVersion 18
     buildToolsVersion "18.0.1"
+}
+
+//Directory in which to place the final archive
+targetUploadDir = "file://" + System.getenv("MAVEN_DIR")
+//Version name, can be anything you want!
+versionName = "1.0"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: targetUploadDir)
+
+            pom.groupId = 'com.twowayview'
+            pom.artifactId = 'library'
+            pom.version = versionName
+            pom.packaging = 'aar'
+        }
+    }
 }
