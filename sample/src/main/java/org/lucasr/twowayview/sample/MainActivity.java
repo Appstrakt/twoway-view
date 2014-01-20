@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View child, int position,
-                    long id) {
+                                    long id) {
                 mClickMessage = "Item clicked: " + position;
                 refreshToast();
             }
@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
         mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View child,
-                    int position, long id) {
+                                           int position, long id) {
                 mClickMessage = "Item long pressed: " + position;
                 refreshToast();
                 return true;
@@ -79,18 +79,18 @@ public class MainActivity extends Activity {
             @Override
             public void onScrollStateChanged(TwoWayView view, int scrollState) {
                 String stateName = "Undefined";
-                switch(scrollState) {
-                case SCROLL_STATE_IDLE:
-                    stateName = "Idle";
-                    break;
+                switch (scrollState) {
+                    case SCROLL_STATE_IDLE:
+                        stateName = "Idle";
+                        break;
 
-                case SCROLL_STATE_TOUCH_SCROLL:
-                    stateName = "Dragging";
-                    break;
+                    case SCROLL_STATE_TOUCH_SCROLL:
+                        stateName = "Dragging";
+                        break;
 
-                case SCROLL_STATE_FLING:
-                    stateName = "Flinging";
-                    break;
+                    case SCROLL_STATE_FLING:
+                        stateName = "Flinging";
+                        break;
                 }
 
                 mStateMessage = "Scroll state changed: " + stateName;
@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onScroll(TwoWayView view, int firstVisibleItem,
-                    int visibleItemCount, int totalItemCount) {
+                                 int visibleItemCount, int totalItemCount) {
                 mScrollMessage = "Scroll (first: " + firstVisibleItem + ", count = " + visibleItemCount + ")";
                 refreshToast();
             }
