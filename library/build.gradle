@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
 }
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 dependencies {
     compile 'com.android.support:support-v4:18.0.+'
@@ -23,19 +23,19 @@ android {
 }
 
 //Directory in which to place the final archive
-targetUploadDir = "file://" + System.getenv("MAVEN_DIR")
-//Version name, can be anything you want!
-versionName = "1.0"
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: targetUploadDir)
-
-            pom.groupId = 'com.twowayview'
-            pom.artifactId = 'library'
-            pom.version = versionName
-            pom.packaging = 'aar'
-        }
-    }
-}
+//targetUploadDir = "file://" + System.getenv("MAVEN_DIR")
+////Version name, can be anything you want!
+//versionName = "1.0"
+//
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: targetUploadDir)
+//
+//            pom.groupId = 'com.twowayview'
+//            pom.artifactId = 'library'
+//            pom.version = versionName
+//            pom.packaging = 'aar'
+//        }
+//    }
+//}
